@@ -1,10 +1,10 @@
-import Section from "./Section";
-import Image from "next/image";
+import Section from "@/components/Section";
 import { GlobeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { LastCustomers } from "@/lib/customersData";
+import Image from "next/image";
+import { AllCustomers } from "@/lib/customersData";
 
-export function Portolio() {
+export default function Portolio() {
   return (
     <Section className="flex flex-col gap-12">
       <div className="flex flex-col items-center justify-center gap-4 text-center sm:mx-auto sm:max-w-md">
@@ -15,7 +15,7 @@ export function Portolio() {
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 m-auto md:grid-cols-2 w-fit">
-        {LastCustomers.map((customer, index) => (
+        {AllCustomers.map((customer, index) => (
           <div
             key={index}
             className="flex flex-col border border-gray-300 rounded-xl hover:shadow-md">
@@ -46,13 +46,6 @@ export function Portolio() {
             </div>
           </div>
         ))}
-      </div>
-      <div className="flex justify-center">
-        <Link href="/Portfolio">
-          <button className="items-center px-4 py-2 text-base font-bold text-white transition-colors bg-blue-400 border-2 border-blue-400 rounded-full duration-350 hover:bg-white hover:text-blue-400">
-            View more work
-          </button>
-        </Link>
       </div>
     </Section>
   );
