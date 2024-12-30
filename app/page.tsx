@@ -1,5 +1,13 @@
-import { Portolio } from "@/components/Portfolio";
+import Portfolio from "@/components/Portfolio";
+import CTA from "@/components/CTA";
+import Advantages from "@/components/Advantages";
 
 export default function Home() {
-  return <Portolio />;
+  return (
+    <>
+      <Portfolio />
+      <Advantages />
+      <CTA />
+    </>
+  );
 }

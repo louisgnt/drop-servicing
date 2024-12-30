@@ -1,58 +1,140 @@
 import Section from "./Section";
-import Image from "next/image";
-import { GlobeIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
-import { LastCustomers } from "@/lib/customersData";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { Button } from "./ui/button";
 
-export function Portolio() {
+// Il faut changer les videos mais si tu valides je pense que la page est op
+
+export default function Portfolio() {
   return (
-    <Section className="flex flex-col gap-12">
-      <div className="flex flex-col items-center justify-center gap-4 text-center sm:mx-auto sm:max-w-md">
-        <h1 className="text-4xl font-bold text-gray-800 ">Recent Projects</h1>
-        <p className="text-gray-800">
-          Check out some of our latest projects, done for customers around the
-          world, in every industry.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 gap-8 m-auto md:grid-cols-2 w-fit">
-        {LastCustomers.map((customer, index) => (
-          <div
-            key={index}
-            className="flex flex-col border border-gray-300 rounded-xl hover:shadow-md">
-            <div>
-              <Image
-                src={customer.image}
-                alt="Work for the customer"
-                width={500}
-                height={500}
-              />
+    <Section>
+      <div className="flex flex-col items-center bg-white">
+        {/* Title and description */}
+        <div className="mt-16 mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-800">
+            Our Creations
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            Explore the collection of our work.
+          </p>
+        </div>
+
+        {/* Portfolio grid */}
+        <div className="grid w-full grid-cols-1 gap-6 p-6 md:grid-cols-12 max-w-7xl animate-slideUp">
+          {/* Top Left Card - Smaller width */}
+          <div className="flex flex-col gap-4 md:col-span-5">
+            <div className="w-full h-[300px] rounded-3xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 p-6">
+              <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
+                <video
+                  className="absolute object-contain w-full h-full"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline>
+                  <source
+                    src="https://hasque.com/images/instagram.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
             </div>
-            <div className="flex flex-col px-2 pb-2 space-y-2 md:space-y-1">
-              <h1 className="mt-1 text-lg font-medium text-gray-800 ">
-                {customer.name}
-              </h1>
-              <p className="text-xs font-light">{customer.date}</p>
-              <p className="flex flex-wrap text-sm text-gray-500">
-                {customer.description}
+            <div className="flex flex-col gap-1 px-1">
+              <h3 className="text-lg font-medium text-black">Graphic Charts</h3>
+              <p className="text-sm text-black/60">
+                A graphic charter guarantees you a coherent visual identity on
+                all its communication media
               </p>
-              {customer.website && (
-                <Link href={customer.website}>
-                  <button className="flex items-center gap-2 px-2 py-1 text-xs text-white bg-black rounded-lg w-fit hover:bg-black/90">
-                    <GlobeIcon />
-                    Website
-                  </button>
-                </Link>
-              )}
             </div>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-center">
-        <Link href="/Portfolio">
-          <button className="items-center px-4 py-2 text-base font-bold text-white transition-colors bg-blue-400 border-2 border-blue-400 rounded-full duration-350 hover:bg-white hover:text-blue-400">
-            View more work
-          </button>
-        </Link>
+
+          {/* Top Right Card - Larger width */}
+          <div className="flex flex-col gap-4 md:col-span-7 animate-slideUp">
+            <div className="w-full h-[300px] rounded-3xl bg-blue-600 p-6">
+              <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
+                <video
+                  className="absolute object-contain w-full h-full"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline>
+                  <source
+                    src="https://firebasestorage.googleapis.com/v0/b/proto-3691f.appspot.com/o/videos%2Ftest-download.mp4?alt=media&token=45bee45e-7948-4ece-9306-53ffd9953020"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 px-1">
+              <h3 className="text-lg font-medium text-black">Logo Design</h3>
+              <p className="text-sm text-black/60">
+                This is the first visual element that customers associate with a
+                brand. A good logo conveys your values
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Left Card - Larger width */}
+          <div className="flex flex-col gap-4 md:col-span-7 animate-slideUp">
+            <div className="w-full h-[300px] rounded-3xl bg-indigo-600 p-6">
+              <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
+                <video
+                  className="absolute object-contain w-full h-full"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline>
+                  <source
+                    src="https://firebasestorage.googleapis.com/v0/b/proto-3691f.appspot.com/o/videos%2Ftest-download.mp4?alt=media&token=45bee45e-7948-4ece-9306-53ffd9953020"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 px-1">
+              <h3 className="text-lg font-medium text-black">
+                Personalized Request{" "}
+              </h3>
+              <p className="text-sm text-black/60">
+                We will make you other creations on request to grow your brand
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Right Card - Smaller width */}
+          <div className="flex flex-col gap-4 md:col-span-5 animate-slideUp">
+            <div className="w-full h-[300px] rounded-3xl bg-yellow-400 p-6">
+              <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
+                <video
+                  className="absolute object-contain w-full h-full"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline>
+                  <source
+                    src="https://hasque.com/images/instagram.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 px-1">
+              <h3 className="text-lg font-medium text-black">
+                Social Networks
+              </h3>
+              <p className="text-sm text-black/60">
+                Social networks will allow you to attract and retain your
+                audience
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Button at the bottom */}
+        <div className="mt-12 mb-16">
+          <Button className="flex items-center gap-2 text-base font-semibold text-white transition-colors duration-300 bg-blue-400 border-2 border-blue-400 shadow-md hover:bg-white hover:text-blue-400 hover:shadow-lg">
+            Taking action
+            <ArrowRightIcon />
+          </Button>
+        </div>
       </div>
     </Section>
   );
