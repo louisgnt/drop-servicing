@@ -1,6 +1,6 @@
 "use client";
 
-import { PaperPlaneIcon } from "@radix-ui/react-icons";
+import { Send } from "lucide-react";
 import Link from "next/link";
 import Section from "./Section";
 import { cn } from "@/lib/utils";
@@ -42,7 +42,7 @@ export default function Navbar() {
             size="sm"
             className="text-white bg-blue-400 rounded-full hover:bg-blue-400/90">
             Contact us
-            <PaperPlaneIcon className="w-4 h-4 md:ml-2" />
+            <Send />
           </Button>
         </div>
       </Section>

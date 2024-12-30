@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 export default function Portfolio() {
   return (
     <Section>
-      <div className="flex flex-col items-center bg-white">
+      <div className="flex flex-col items-center min-h-screen bg-white">
         {/* Title and description */}
         <div className="mt-16 mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-800">
@@ -74,7 +74,7 @@ export default function Portfolio() {
 
           {/* Bottom Left Card - Larger width */}
           <div className="flex flex-col gap-4 md:col-span-7 animate-slideUp">
-            <div className="w-full h-[300px] rounded-3xl bg-indigo-600 p-6">
+            <div className="w-full h-[300px] rounded-3xl bg-fuchsia-600 p-6">
               <div className="relative flex items-center justify-center w-full h-full overflow-hidden">
                 <video
                   className="absolute object-contain w-full h-full"
@@ -130,7 +130,7 @@ export default function Portfolio() {
 
         {/* Button at the bottom */}
         <div className="mt-12 mb-16">
-          <Button className="flex items-center gap-2 text-base font-semibold text-white transition-colors duration-300 bg-blue-400 border-2 border-blue-400 shadow-md hover:bg-white hover:text-blue-400 hover:shadow-lg">
+          <Button className="text-base font-semibold text-white bg-blue-400 hover:bg-blue-400/90">
             Taking action
             <ArrowRightIcon />
           </Button>
